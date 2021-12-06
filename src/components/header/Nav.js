@@ -2,14 +2,23 @@
 //Brand (título/nombre de la tienda) - Un listado de categorías clickeables -Incorpora alguna librería de estilos con bootstrap/materialize u otro de tu preferencia (opcional).
 
 import React from 'react'
-import "./header.css"
+import "./header.scss"
 import CartWidget from './CartWidget'
 
 const Nav = () => {
     return (
-<nav>
-    <CartWidget/>
+
+<nav className="nav">
+    <ul>
+        <li><a href="#!">Productos</a></li>
+        <li><a href="#!">Ofertas</a></li>
+        <li><a href="#!">Contacto</a></li>
+        <li><a href="#!">Sobre nosotros</a></li>
+        <li><CartWidget/></li>
+    </ul>
+    
 </nav>
+
     )
 }
 

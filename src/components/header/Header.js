@@ -1,4 +1,4 @@
-import "./header.css"
+import "./header.scss"
 
 import Nav from "./Nav"
 
@@ -8,7 +8,7 @@ import React from 'react'
 const Header = (props) => {
     return (
 <>
-    <header>
+    <header className="header">
         <h1>{props.title}</h1>
         <Nav/>
     </header>
