@@ -1,0 +1,26 @@
+@import "base";
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@300&display=swap');
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    h1{
+        font-family:'Monoton', cursive;
+        font-size: 4rem;
+        word-spacing: 1rem;
+        letter-spacing: .5rem;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+    .nav{
+        ul{
+            li{
+                margin-left: 1rem;
+                display: inline-block;
+                list-style: none;
+            }
+        } 
+
+    }
+}

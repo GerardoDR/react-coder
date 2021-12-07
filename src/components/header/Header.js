@@ -1,9 +1,6 @@
-import "./header.scss"
-
 import Nav from "./Nav"
-
 import React from 'react'
-
+import "../../styles/_header.scss"
 
 const Header = (props) => {
     return (

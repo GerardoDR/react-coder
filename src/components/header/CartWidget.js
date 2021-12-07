@@ -1,5 +1,5 @@
-import "./header.scss"
 import React from 'react'
+import "../../styles/_header.scss"
 
 const CartWidget = () => {
     return (
