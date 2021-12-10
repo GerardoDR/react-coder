@@ -10,8 +10,25 @@
     background-color: $space-cadet;
 }
 
+.toastAdd{
+    font-size: 1rem;
+    background-color: $dark-purple;
+}
+
 .contador{
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
-    color: #000;
+    button{
+        background-color: $skobeloff;
+        border: none;
+        padding: 1em;
+        box-shadow: 0 0 1em $space-cadet;
+        margin: .5em;
+        line-height: .5em;
+        vertical-align: middle;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
