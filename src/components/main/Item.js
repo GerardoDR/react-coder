@@ -1,20 +1,13 @@
-import React from 'react'
-import ItemCount from './ItemCount.js'
+import React from "react";
+import ItemCount from "./ItemCount.js";
 const Item = (props) => {
-    console.log("props a item.js: ")
-    console.log(props)
-    return (
-    <>
-        {props.listProds.map( (prod) => (
-            <div key={prod.id}>
-                <h3>{prod.name}</h3>
-                <p>Precio: {prod.price}</p>
-                <ItemCount stock={10} initial={1} onAdd={props.onAdd}/>
-            </div>
-            ))
-        }
-    </>
-    )
-}
+  return (
+    <div className="item" id={props.key}>
+        <h3>{props.name}</h3>
+        <p>{`Precio: $${props.price}`}</p>
+        <ItemCount stock={10} initial={1} onAdd={props.onAdd} addFail={props.addFail}/>
+    </div>
+  );
+};
 
-export default Item
+export default Item;

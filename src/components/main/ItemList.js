@@ -1,13 +1,13 @@
-import Item from "./Item.js"
+import Item from "./Item.js";
 
 const ItemList = (props) => {
-    
+  return (
+    <div className="listaProds">
+      {props.list.map((prod) => {
+          return <Item key={prod.id} name={prod.name} price={prod.price} onAdd={props.onAdd} addFail={props.addFail}/>
+      })}
+    </div>
+  );
+};
 
-    return (
-    <>
-        <Item listProds={props.prop1} onAdd={props.onAdd}/>
-    </>
-    )
-}
-
-export default ItemList
+export default ItemList;

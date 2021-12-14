@@ -8,6 +8,20 @@
     padding: 1rem;
     margin: 1rem;
     background-color: $space-cadet;
+    
+    .listaProds{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: .5em;
+        
+        .item{
+            border-radius: .5em;
+            background-color: $dark-purple;
+            margin: 10px;
+            box-shadow: 0 0 .3em $russian-violet;
+        }
+    }
 }
 
 .toastAdd{
@@ -22,10 +36,11 @@
     button{
         background-color: $skobeloff;
         border: none;
-        padding: 1em;
-        box-shadow: 0 0 1em $space-cadet;
+        border-radius: .3em;
+        padding: .8em;
+        box-shadow: 0 0 5px $russian-violet;
         margin: .5em;
-        line-height: .5em;
+        line-height: .2em;
         vertical-align: middle;
         &:hover{
             cursor: pointer;
