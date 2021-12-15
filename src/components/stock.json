@@ -1,0 +1,9 @@
+[
+    { "id": 1, "name": "escoba", "price": 1000 },
+    { "id": 2, "name": "esponja", "price": 100 },
+    { "id": 3, "name": "jabon", "price": 100 },
+    { "id": 4, "name": "lavandina", "price": 100 },
+    { "id": 5, "name": "balde", "price": 600 },
+    { "id": 6, "name": "secador", "price": 1000 }
+]
+  
