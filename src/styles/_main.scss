@@ -1,4 +1,6 @@
-.itemListContainer{
+.main {
+  .itemListContainer {
+    min-height: 60vh;
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 1em;
@@ -7,63 +9,64 @@
     margin: 1rem;
     background-color: $space-cadet;
     text-transform: capitalize;
-    
-    .listaProds{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        border-radius: .5em;
-        
-        .item{
-            border-radius: .5em;
-            background-color: $dark-purple;
-            margin: 10px;
-            box-shadow: 0 0 .3em $russian-violet;
-            button{
-                background-color: $skobeloff;
-                border: none;
-                border-radius: .3em;
-                padding: .8em;
-                box-shadow: 0 0 5px $russian-violet;
-                margin: .5em;
-                line-height: .2em;
-                vertical-align: middle;
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-}
 
-.toastAdd{
+    .listaProds {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      border-radius: 0.5em;
+
+      .item {
+        border-radius: 0.5em;
+        background-color: $dark-purple;
+        margin: 10px;
+        box-shadow: 0 0 0.3em $russian-violet;
+        button {
+          background-color: $skobeloff;
+          border: none;
+          border-radius: 0.3em;
+          padding: 0.8em;
+          box-shadow: 0 0 5px $russian-violet;
+          margin: 0.5em;
+          line-height: 0.2em;
+          vertical-align: middle;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .toastAdd {
     font-size: 1rem;
     background-color: $dark-purple;
-}
+  }
 
-.itemDetailContainer{
+  .itemDetailContainer {
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 
-.contador{
+  .contador {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    button{
-        background-color: $skobeloff;
-        border: none;
-        border-radius: .3em;
-        padding: .8em;
-        box-shadow: 0 0 5px $russian-violet;
-        margin: .5em;
-        line-height: .2em;
-        vertical-align: middle;
-        &:hover{
-            cursor: pointer;
-        }
+    button {
+      background-color: $skobeloff;
+      border: none;
+      border-radius: 0.3em;
+      padding: 0.8em;
+      box-shadow: 0 0 5px $russian-violet;
+      margin: 0.5em;
+      line-height: 0.2em;
+      vertical-align: middle;
+      &:hover {
+        cursor: pointer;
+      }
     }
+  }
 }

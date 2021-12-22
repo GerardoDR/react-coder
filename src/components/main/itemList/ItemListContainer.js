@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useParams } from "react";
 import ItemList from "./ItemList.js";
 
 const ItemListContainer = ({products,greeting}) => {
   
   let [list, setList] = useState([]);
+
+  // const resultado = useParams()
 
   useEffect(() => {
     const promesa = new Promise((res, rej) => {
