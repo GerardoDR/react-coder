@@ -12,9 +12,7 @@ const Nav = ({links}) => {
           {el.name}
         </NavLink>)
       })}
-      <NavLink to="/cart">
-        <CartWidget />
-      </NavLink>
+      <NavLink to="/cart"><CartWidget /></NavLink>
     </nav>
   );
 };

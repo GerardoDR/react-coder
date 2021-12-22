@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-
-
+// import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = ({ products }) => {
 
-  let itemID = 6;
-
+  const itemID = 3
   const [selected, setSelected] = useState({});
   
   const getItem = () => {

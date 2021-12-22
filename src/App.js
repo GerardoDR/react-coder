@@ -1,11 +1,12 @@
 import React from "react"
 import Header from "./components/header/Header"
-import Main from "./components/main/Main"
+// import Main from "./components/main/Main"
 import Footer from "./components/footer/Footer"
+import ItemDetailContainer from "./components/main/itemDetail/ItemDetailContainer"
+import ItemListContainer from "./components/main/itemList/ItemListContainer"
+import products from "./components/stock.json"
 import "./styles/App.scss"
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
-// import ItemDetailContainer from "./components/main/itemDetail/ItemDetailContainer"
-// import ItemListContainer from "./components/main/itemList/ItemListContainer"
 
 
 const App = () => {
@@ -17,18 +18,20 @@ const App = () => {
         { href: "/about", name: "sobre nosotros", id: 4 }
     ]
 
+    
     return (
         <BrowserRouter>
             <Header title={"Mi tienda"} links={links}/>
-                <Routes>
-                    <Route path="/" element=""/>
-                    <Route path="/products" element={<Main/>}/>
-                    <Route path="/sale" element={<Main/>}/>
-                    <Route path="/contact" element=""/>
-                    <Route path="/about" element=""/>
-                    <Route path="/product/:id" element={<Main/>}/>
-                </Routes>
-            <Main/>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/products:id" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/sale:id" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/contact" element=""/>
+                        <Route path="/about" element=""/>
+                        <Route path="/product/:id" element={<ItemDetailContainer key={"ItemDetailContainer1"} products={products}/>}/>
+                    </Routes>
+                </main>
             <Footer/>
         </BrowserRouter>
     )

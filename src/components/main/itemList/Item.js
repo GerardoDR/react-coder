@@ -1,16 +1,16 @@
 import React from "react";
 
-const Item = (props) => {
+const Item = ({id, name, price}) => {
 
   const selectItem = () => {
-  sessionStorage.setItem('ItemSelectionID', props.id)
-  console.log(props.id)
+  sessionStorage.setItem('ItemSelectionID',id)
+  console.log(id)
 }
 
   return (
     <div className="item">
-        <h3>{props.name}</h3>
-        <p>Precio: $ {props.price}</p>
+        <h3>{name}</h3>
+        <p>Precio: $ {price}</p>
         <button onClick={selectItem}>Ver detalles</button>
     </div>
   );

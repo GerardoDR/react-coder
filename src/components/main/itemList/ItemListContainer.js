@@ -1,11 +1,15 @@
-import React, { useState, useEffect, useParams } from "react";
+import React, { useState, useEffect} from "react";
+import { useParams } from "react-router-dom"
 import ItemList from "./ItemList.js";
+
+
 
 const ItemListContainer = ({products,greeting}) => {
   
   let [list, setList] = useState([]);
 
-  // const resultado = useParams()
+  const resultado = useParams()
+  console.log(resultado)
 
   useEffect(() => {
     const promesa = new Promise((res, rej) => {
