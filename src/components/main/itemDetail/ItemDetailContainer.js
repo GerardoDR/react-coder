@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-// import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = ({ products }) => {
 
-  const itemID = 3
+  let {id} = useParams()
+
   const [selected, setSelected] = useState({});
   
   const getItem = () => {
     const promesa = new Promise((res, rej) => {
       setTimeout(() => {
-        res(products.find((prod) => prod.id === itemID));
+        res(products.find((prod) => prod.id == id));
       }, 2000);
     });
     promesa.then((prod) => {
       setSelected(prod);
+
     });
   }
 
-  useEffect(() => getItem(),[itemID])
+  useEffect(() => getItem(),[id])
 
   return <ItemDetail prod={selected}/>
 };
