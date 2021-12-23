@@ -5,6 +5,7 @@ import ItemListContainer from "./components/main/itemList/ItemListContainer"
 import About from "./components/main/About"
 import Contact from "./components/main/Contact"
 import Footer from "./components/footer/Footer"
+import Cart from "./components/main/Cart"
 import products from "./components/stock.json"
 import "./styles/App.scss"
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
@@ -32,6 +33,7 @@ const App = () => {
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/about" element={<About/>}/>
                         <Route path="/product/:id" element={<ItemDetailContainer key={"ItemDetailContainer1"} products={products}/>}/>
+                        <Route path="/cart" element={<Cart/>}/>
                     </Routes>
                 </main>
             <Footer/>
