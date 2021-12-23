@@ -13,10 +13,11 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom'
 const App = () => {
     
     const links = [
-        { href: "/products", name: "productos", id: 1 },
-        { href: "/sale", name: "ofertas", id: 2 },
-        { href: "/contact", name: "contacto", id: 3 },
-        { href: "/about", name: "sobre nosotros", id: 4 }
+        { href: "/home", name: "home", id: 1 },
+        { href: "/category/outlet", name: "outlet", id: 2 },
+        { href: "/category/sale", name: "ofertas", id: 3 },
+        { href: "/contact", name: "contacto", id: 4 },
+        { href: "/about", name: "sobre nosotros", id: 5 }
     ]
 
     
@@ -26,8 +27,8 @@ const App = () => {
                 <main>
                     <Routes>
                         <Route path="/" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/products" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/sale" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/home" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/category/:category" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/about" element={<About/>}/>
                         <Route path="/product/:id" element={<ItemDetailContainer key={"ItemDetailContainer1"} products={products}/>}/>

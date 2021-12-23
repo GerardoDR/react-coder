@@ -1,9 +1,9 @@
 [
-    { "id": 1, "name": "escoba", "price": 1000, "img":"/assets/escoba.jpg" },
-    { "id": 2, "name": "esponja", "price": 100, "img":"/assets/esponja.jpg" },
-    { "id": 3, "name": "jabon", "price": 100, "img":"/assets/jabon.jpg" },
-    { "id": 4, "name": "lavandina", "price": 100, "img":"/assets/lavandina.jpg" },
-    { "id": 5, "name": "balde", "price": 600, "img":"/assets/balde.jpg" },
-    { "id": 6, "name": "secador", "price": 1000, "img":"/assets/secador.jpg" }
+    { "id": 1, "name": "escoba", "price": 1000, "img":"/assets/escoba.jpg", "category":"sale" },
+    { "id": 2, "name": "esponja", "price": 100, "img":"/assets/esponja.jpg", "category":"sale" },
+    { "id": 3, "name": "jabon", "price": 100, "img":"/assets/jabon.jpg", "category":"outlet" },
+    { "id": 4, "name": "lavandina", "price": 100, "img":"/assets/lavandina.jpg", "category":"sale" },
+    { "id": 5, "name": "balde", "price": 600, "img":"/assets/balde.jpg", "category":"outlet" },
+    { "id": 6, "name": "secador", "price": 1000, "img":"/assets/secador.jpg", "category":"" }
 ]
   

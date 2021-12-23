@@ -34,8 +34,11 @@ const ItemDetail = ({ prod }) => {
 
   return (
     <div className="itemDetailContainer">
-      <h2>{prod.name}</h2>
-      <img src={prod.img} label={prod.name}/>
+      <div className="details">
+        <h2>{prod.name}</h2>
+        <p>Precio: $ {prod.price}</p>
+      </div>
+      <img src={prod.img} alt={prod.name}/>
       <ItemCount stock={10} initial={1} onAdd={onAdd} addFail={addFail} />
       <ToastContainer />
     </div>

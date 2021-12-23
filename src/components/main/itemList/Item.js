@@ -7,8 +7,10 @@ const Item = ({id, name, price, img}) => {
     <div className="item">
         <h3>{name}</h3>
         <img className="itemImg" src={img}/>
-        <p>Precio: $ {price}</p>
-        <Link to={`/product/${id}`}><button>Ver Detalles</button></Link>
+        <div className="cardFooter">
+          <p>Precio: $ {price}</p>
+          <Link to={`/product/${id}`}><button>Ver Detalles</button></Link>
+        </div>
     </div> 
   );
 };
