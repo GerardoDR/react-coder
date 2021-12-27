@@ -27,12 +27,12 @@ const App = () => {
             <Header title={"Mi tienda"} links={links}/>
                 <main>
                     <Routes>
-                        <Route path="/" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/home" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/category/:category" element={<ItemListContainer key={"ItemListContainer1"} products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/" element={<ItemListContainer products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/home" element={<ItemListContainer products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/category/:category" element={<ItemListContainer products={products} greeting={"ACA VA EL HERO"} />}/>
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/about" element={<About/>}/>
-                        <Route path="/product/:id" element={<ItemDetailContainer key={"ItemDetailContainer1"} products={products}/>}/>
+                        <Route path="/product/:id" element={<ItemDetailContainer/>}/>
                         <Route path="/cart" element={<Cart/>}/>
                     </Routes>
                 </main>

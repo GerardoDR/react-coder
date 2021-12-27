@@ -3,33 +3,39 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.js";
 
 const ItemListContainer = ({products,greeting}) => {
-  
+
+  const [loading, setLoading] = useState (true)
+
   let [list, setList] = useState([]);
 
   let {category} = useParams()
 
   useEffect(() => {
-    const promesa = new Promise((res, rej) => {
-      setTimeout(() => {
+      fetch("https://e091d3aa-c5f9-4c9f-91e8-06bdccb48e30.mock.pstmn.io/products")
+      .then(res => res.json())
+      .then(res => {
+        setLoading(false)
         if(!category){
-            res(products)
-          } else {
-            res(products.filter((prod) => prod.category == category))
-          }
-      }, 2000);
-    });
-    promesa.then((prods) => {
-      setList(prods);
-    });
-  }, [category]);
+          setList(res)
+        } else {
+          setList(res.filter((prod) => prod.category === category))
+        }
+      }          
+      )}, [category]);
 
+  if(loading){
 
-  return (
-    <div className="itemListContainer">
-      <p>{greeting}</p>
-      <ItemList list={list}/>
-    </div>
-  );
+    return <h2 className="mt">CARGANDO...</h2>;
+
+  } else {
+    return (
+      <div className="itemListContainer">
+        <p>{greeting}</p>
+        <ItemList list={list}/>
+      </div>
+    );
+  }
+  
 };
 
 export default ItemListContainer;
