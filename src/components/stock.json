@@ -6,4 +6,3 @@
     { "id": 5, "name": "balde", "price": 600, "img":"/assets/balde.jpg", "category":"outlet" },
     { "id": 6, "name": "secador", "price": 1000, "img":"/assets/secador.jpg", "category":"" }
 ]
-  

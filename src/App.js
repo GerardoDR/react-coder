@@ -6,7 +6,7 @@ import About from "./components/main/About"
 import Contact from "./components/main/Contact"
 import Footer from "./components/footer/Footer"
 import Cart from "./components/main/Cart"
-import products from "./components/stock.json"
+import PageNotFound from "./PageNotFound"
 import "./styles/App.scss"
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 
@@ -24,16 +24,17 @@ const App = () => {
     
     return (
         <BrowserRouter>
-            <Header title={"Mi tienda"} links={links}/>
+            <Header title={"El Olimpio"} links={links}/>
                 <main>
                     <Routes>
-                        <Route path="/" element={<ItemListContainer products={products} greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/home" element={<ItemListContainer products={products} greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/category/:category" element={<ItemListContainer products={products} greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/home" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
+                        <Route path="/category/:category" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/about" element={<About/>}/>
                         <Route path="/product/:id" element={<ItemDetailContainer/>}/>
                         <Route path="/cart" element={<Cart/>}/>
+                        <Route path="*" element={<PageNotFound/>}/>
                     </Routes>
                 </main>
             <Footer/>

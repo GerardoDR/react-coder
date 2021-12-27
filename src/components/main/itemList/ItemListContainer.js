@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.js";
 
-const ItemListContainer = ({products,greeting}) => {
+const ItemListContainer = ({greeting}) => {
 
   const [loading, setLoading] = useState (true)
 
