@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const ItemDetail = ({ prod }) => {
 
   const [compra, setCompra] = useState(false)
+  const [cantidad, setCantidad] = useState(0)
 
   const onAdd = (cont) => {
 
@@ -22,8 +23,9 @@ const ItemDetail = ({ prod }) => {
       progress: undefined,
       className: "toastAdd",
     });
-    
+    setCantidad(cont)
     setCompra(true)
+    //context para guardar "cantidad"?
   };
 
   const addFail = () => {
