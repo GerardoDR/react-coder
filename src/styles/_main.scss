@@ -95,23 +95,24 @@ main {
             flex-direction: column;
             align-items: center;
             grid-area: 2 / 3 / 4 / 4;
+        }
 
-            button {
-                background-color: $skobeloff;
-                border: none;
-                border-radius: .3em;
-                padding: .8em;
-                box-shadow: 0 0 5px $russian-violet;
-                margin: .5em;
-                line-height: .2em;
-                vertical-align: middle;
+        button {
+            background-color: $skobeloff;
+            border: none;
+            border-radius: .3em;
+            padding: .8em;
+            box-shadow: 0 0 5px $russian-violet;
+            margin: .5em;
+            line-height: .2em;
+            vertical-align: middle;
 
-                &:hover {
-                    cursor: pointer;
-                }
+            &:hover {
+                cursor: pointer;
             }
         }
     }
+    
     #notFound{
         display: flex;
         align-items: center;

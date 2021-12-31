@@ -2,9 +2,15 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import ItemCount from "./ItemCount";
 import "react-toastify/dist/ReactToastify.min.css";
+import { useState } from "react/cjs/react.development";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ prod }) => {
+
+  const [compra, setCompra] = useState(false)
+
   const onAdd = (cont) => {
+
     toast.success("items agregados:  " + cont, {
       theme: "dark",
       position: "top-right",
@@ -16,6 +22,8 @@ const ItemDetail = ({ prod }) => {
       progress: undefined,
       className: "toastAdd",
     });
+    
+    setCompra(true)
   };
 
   const addFail = () => {
@@ -39,7 +47,10 @@ const ItemDetail = ({ prod }) => {
         <p>Precio: $ {prod.price}</p>
       </div>
       <img src={prod.img} alt={prod.name}/>
-      <ItemCount stock={10} initial={1} onAdd={onAdd} addFail={addFail} />
+      {compra
+      ? <Link to="/cart"><button>Terminar compra</button></Link>
+      : <ItemCount stock={10} initial={1} onAdd={onAdd} addFail={addFail}/>
+      }
       <ToastContainer />
     </div>
   );
