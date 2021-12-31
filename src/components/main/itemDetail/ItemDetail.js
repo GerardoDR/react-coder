@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import ItemCount from "./ItemCount";
 import "react-toastify/dist/ReactToastify.min.css";
-import { useState } from "react/cjs/react.development";
 import { Link } from "react-router-dom";
+import { QuantityContext } from "../../../context/QuantityProvider.js";
 
 const ItemDetail = ({ prod }) => {
 
-  const [compra, setCompra] = useState(false)
-  const [cantidad, setCantidad] = useState(0)
+  const [buy, setBuy] = useState(false)
+  // const [quantity, setQuantity] = useState(0)
+
+  const {toCart} = useContext(QuantityContext)
 
   const onAdd = (cont) => {
 
@@ -23,9 +25,10 @@ const ItemDetail = ({ prod }) => {
       progress: undefined,
       className: "toastAdd",
     });
-    setCantidad(cont)
-    setCompra(true)
-    //context para guardar "cantidad"?
+
+    // setQuantity(cont)
+    setBuy(true)
+    toCart(cont)
   };
 
   const addFail = () => {
@@ -49,7 +52,7 @@ const ItemDetail = ({ prod }) => {
         <p>Precio: $ {prod.price}</p>
       </div>
       <img src={prod.img} alt={prod.name}/>
-      {compra
+      {buy
       ? <Link to="/cart"><button>Terminar compra</button></Link>
       : <ItemCount stock={10} initial={1} onAdd={onAdd} addFail={addFail}/>
       }
