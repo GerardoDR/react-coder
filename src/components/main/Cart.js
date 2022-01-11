@@ -3,22 +3,22 @@ import { CartContext } from "../../context/CartProvider.js"
 
 const Cart = () => {
     const { cart, delFromCart, emptyCart, } = useContext(CartContext)
-
-    if(cart.lenght > 0){
+    console.log(cart)
+    if(cart.length > 0){
         
         return(
-            <>
+            <div className="cartBody mt">
                 {cart.map((prod)=>{
                     return (
-                        <div className="cartItem">
+                        <div key={prod.id} className="cartItem">
                             <p>{prod.name}</p>
-                            <p>{prod.price}</p>
+                            <p>Precio: ${prod.price}</p>
                             <button onClick={delFromCart}>X</button>
                         </div>
                     )
                 })}
-                <button onClick={emptyCart()}>vaciar carrito</button>
-            </>
+                <button onClick={emptyCart}>Vaciar Carrito</button>
+            </div>
         )
     } else {
         return(

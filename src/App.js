@@ -24,8 +24,8 @@ const App = () => {
 
     
     return (
+        <CartProvider>
         <BrowserRouter>
-            <CartProvider>
             <Header title={"El Olimpio"} links={links}/>
             <main>
                 <Routes>
@@ -39,9 +39,9 @@ const App = () => {
                     <Route path="*" element={<PageNotFound/>}/>
                 </Routes>
             </main>
-            </CartProvider>
             <Footer/>
         </BrowserRouter>
+        </CartProvider>
     )
 }
 

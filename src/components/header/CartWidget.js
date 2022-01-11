@@ -4,10 +4,10 @@ import { useContext } from "react";
 
 
 const CartWidget = () => {
-  // const  { totalQuant } = useContext(CartContext)
+  const  { totalQuant } = useContext(CartContext)
   return (
     <>
-      <span className="material-icons">shopping_cart</span>{/* {totalQuant} */}
+      <span className="material-icons">shopping_cart</span>{totalQuant}
     </>
     );
   

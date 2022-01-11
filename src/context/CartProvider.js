@@ -10,33 +10,37 @@ const CartProvider = ({children}) => {
 
 
     const toCart = (product, quantity) => {
-        console.log(`desde toCart: ${product} y cantidad: ${quantity}`)
-        let alreadyInCart = cart.find((prod) => prod.id === product.id)
+
+        console.log(product,quantity)
+
+        let alreadyInCart = cart.find((prod) => prod.id == product.id)
+
+        console.log(alreadyInCart)
 
         if(alreadyInCart){
 
             let cartCopy = [...cart]
             let found = cartCopy.find((prod) => prod.id == product.id)
+            console.log(found)
             found.quantity += quantity
-            // setTotalQuant(totalQuant+quantity)
+            setTotalQuant(totalQuant+quantity)
             setCart(cartCopy)
 
         } else {
-            const prodCopy = {...product}
-            prodCopy.quantity = quantity
-            setCart(...cart,product)
-            // setTotalQuant(totalQuant+quantity)
-
+            product.quantity = quantity
+            setCart([...cart,product])
+            setTotalQuant(totalQuant+quantity)
+            console.log(product)
+            console.log(cart)
         }
 
     }
 
-    const delFromCart = (id) =>{
+    const delFromCart = (i) =>{
         let cartCopy = [...cart]
-        let trash = cartCopy.id.indexOf(id)
-        let minus = cartCopy[trash].quantity
-        // setTotalQuant(totalQuant - minus)
-        setCart(cartCopy.splice(trash, 1))
+        let minus = cartCopy[i].quantity
+        setTotalQuant(totalQuant - minus)
+        setCart(cartCopy.splice(i, 1))
     }
 
 

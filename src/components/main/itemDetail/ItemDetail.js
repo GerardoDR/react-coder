@@ -27,7 +27,6 @@ const ItemDetail = ({ prod }) => {
 
     // setQuantity(cont)
     setBuy(true)
-    console.log(prod)
     toCart(prod,count)
   };
 
