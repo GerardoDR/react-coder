@@ -3,18 +3,17 @@ import { ToastContainer, toast } from "react-toastify";
 import ItemCount from "./ItemCount";
 import "react-toastify/dist/ReactToastify.min.css";
 import { Link } from "react-router-dom";
-import { QuantityContext } from "../../../context/QuantityProvider.js";
+import { CartContext } from "../../../context/CartProvider";
 
 const ItemDetail = ({ prod }) => {
 
   const [buy, setBuy] = useState(false)
-  // const [quantity, setQuantity] = useState(0)
 
-  const {toCart} = useContext(QuantityContext)
+  const { toCart } = useContext(CartContext)
 
-  const onAdd = (cont) => {
+  const onAdd = (count) => {
 
-    toast.success("items agregados:  " + cont, {
+    toast.success(`items agregados: ${count} ${prod.name}`, {
       theme: "dark",
       position: "top-right",
       autoClose: 2000,
@@ -28,7 +27,8 @@ const ItemDetail = ({ prod }) => {
 
     // setQuantity(cont)
     setBuy(true)
-    toCart(cont)
+    console.log(prod)
+    toCart(prod,count)
   };
 
   const addFail = () => {

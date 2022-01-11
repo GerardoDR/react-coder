@@ -7,7 +7,7 @@ import Contact from "./components/main/Contact"
 import Footer from "./components/footer/Footer"
 import Cart from "./components/main/Cart"
 import PageNotFound from "./PageNotFound"
-import QuantityProvider from "./context/QuantityProvider"
+import CartProvider from "./context/CartProvider"
 import "./styles/App.scss"
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 
@@ -25,21 +25,21 @@ const App = () => {
     
     return (
         <BrowserRouter>
+            <CartProvider>
             <Header title={"El Olimpio"} links={links}/>
-                <main>
-                    <QuantityProvider>
-                    <Routes>
-                        <Route path="/" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/home" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/category/:category" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
-                        <Route path="/contact" element={<Contact/>}/>
-                        <Route path="/about" element={<About/>}/>
-                        <Route path="/product/:id" element={<ItemDetailContainer/>}/>
-                        <Route path="/cart" element={<Cart/>}/>
-                        <Route path="*" element={<PageNotFound/>}/>
-                    </Routes>
-                    </QuantityProvider>
-                </main>
+            <main>
+                <Routes>
+                    <Route path="/" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
+                    <Route path="/home" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
+                    <Route path="/category/:category" element={<ItemListContainer greeting={"ACA VA EL HERO"} />}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/product/:id" element={<ItemDetailContainer/>}/>
+                    <Route path="/cart" element={<Cart/>}/>
+                    <Route path="*" element={<PageNotFound/>}/>
+                </Routes>
+            </main>
+            </CartProvider>
             <Footer/>
         </BrowserRouter>
     )
