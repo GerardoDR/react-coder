@@ -3,24 +3,18 @@ import { createContext, useState } from "react";
 export const CartContext = createContext()
 
 const CartProvider = ({children}) => {
-
-    // const [quant,setQuant] = useState(0)
+    
     const [cart,setCart] = useState([])
     const [totalQuant, setTotalQuant] = useState(0)
 
-
     const toCart = (product, quantity) => {
 
-        console.log(product,quantity)
-
-        let alreadyInCart = cart.find((prod) => prod.id == product.id)
-
-        console.log(alreadyInCart)
+        let alreadyInCart = cart.find((prod) => prod.id === product.id)
 
         if(alreadyInCart){
 
             let cartCopy = [...cart]
-            let found = cartCopy.find((prod) => prod.id == product.id)
+            let found = cartCopy.find((prod) => prod.id === product.id)
             console.log(found)
             found.quantity += quantity
             setTotalQuant(totalQuant+quantity)
@@ -30,24 +24,30 @@ const CartProvider = ({children}) => {
             product.quantity = quantity
             setCart([...cart,product])
             setTotalQuant(totalQuant+quantity)
-            console.log(product)
-            console.log(cart)
         }
 
     }
 
-    const delFromCart = (i) =>{
-        let cartCopy = [...cart]
-        let minus = cartCopy[i].quantity
+    const delFromCart = (id) => {
+        const deleting = cart.find((prod) => prod.id === id)
+        const i = cart.indexOf(deleting,0)
+        const minus = cart[i].quantity
         setTotalQuant(totalQuant - minus)
-        setCart(cartCopy.splice(i, 1))
+        const cartCopy = [...cart]
+        cartCopy.splice(i,1)
+        setCart(cartCopy)
     }
+    
 
 
-    const emptyCart = () => setCart([])
+    const emptyCart = () => {
+        setCart([])
+        setTotalQuant(0)
+    }
 
     const cartVal = {
         cart,
+        totalQuant,
         toCart,
         delFromCart,
         emptyCart

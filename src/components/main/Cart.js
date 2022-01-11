@@ -1,19 +1,23 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartProvider.js"
 
 const Cart = () => {
+
     const { cart, delFromCart, emptyCart, } = useContext(CartContext)
-    console.log(cart)
+    
     if(cart.length > 0){
         
         return(
             <div className="cartBody mt">
                 {cart.map((prod)=>{
+
                     return (
-                        <div key={prod.id} className="cartItem">
+                        <div key={'cart'+prod.id} className="cartItem">
                             <p>{prod.name}</p>
                             <p>Precio: ${prod.price}</p>
-                            <button onClick={delFromCart}>X</button>
+                            <p>x{prod.quantity}</p>
+                            <button onClick={(e)=>{delFromCart(prod.id)}}>X</button>
                         </div>
                     )
                 })}
@@ -24,6 +28,7 @@ const Cart = () => {
         return(
             <div className="mt">
                 <p>El carrito está vacío</p>
+                <Link to="/"><button>Volver a home</button></Link>
             </div>
         )
     }
