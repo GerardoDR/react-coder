@@ -17,15 +17,9 @@ const ItemDetail = ({ prod }) => {
       theme: "dark",
       position: "top-right",
       autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
       className: "toastAdd",
     });
 
-    // setQuantity(cont)
     setBuy(true)
     toCart(prod,count)
   };
@@ -35,11 +29,6 @@ const ItemDetail = ({ prod }) => {
       theme: "dark",
       position: "top-right",
       autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
       className: "toastAdd",
     });
   };

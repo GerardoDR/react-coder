@@ -4,7 +4,7 @@ import { CartContext } from "../../context/CartProvider.js"
 
 const Cart = () => {
 
-    const { cart, delFromCart, emptyCart, } = useContext(CartContext)
+    const { cart, totalPrice, delFromCart, emptyCart } = useContext(CartContext)
     
     if(cart.length > 0){
         
@@ -21,6 +21,7 @@ const Cart = () => {
                         </div>
                     )
                 })}
+                <h3>Total: ${totalPrice}</h3>
                 <button onClick={emptyCart}>Vaciar Carrito</button>
             </div>
         )

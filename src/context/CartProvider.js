@@ -6,6 +6,7 @@ const CartProvider = ({children}) => {
     
     const [cart,setCart] = useState([])
     const [totalQuant, setTotalQuant] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const toCart = (product, quantity) => {
 
@@ -15,22 +16,26 @@ const CartProvider = ({children}) => {
 
             let cartCopy = [...cart]
             let found = cartCopy.find((prod) => prod.id === product.id)
-            console.log(found)
             found.quantity += quantity
             setCart(cartCopy)
 
         } else {
             product.quantity = quantity
             setCart([...cart,product])
+
         }
+
+        setTotalPrice(totalPrice+(quantity*product.price))
         setTotalQuant(totalQuant+quantity)
     }
 
     const delFromCart = (id) => {
         const deleting = cart.find((prod) => prod.id === id)
         const i = cart.indexOf(deleting,0)
-        const minus = cart[i].quantity
-        setTotalQuant(totalQuant - minus)
+        const restQ = cart[i].quantity
+        const restP = cart[i].price*restQ
+        setTotalQuant(totalQuant - restQ)
+        setTotalPrice(totalPrice - restP)
         const cartCopy = [...cart]
         cartCopy.splice(i,1)
         setCart(cartCopy)
@@ -41,11 +46,13 @@ const CartProvider = ({children}) => {
     const emptyCart = () => {
         setCart([])
         setTotalQuant(0)
+        setTotalPrice(0)
     }
 
     const cartVal = {
         cart,
         totalQuant,
+        totalPrice,
         toCart,
         delFromCart,
         emptyCart
