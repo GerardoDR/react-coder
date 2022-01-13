@@ -5,11 +5,15 @@ import { useContext } from "react";
 
 const CartWidget = () => {
   const  { totalQuant } = useContext(CartContext)
+  
   return (
     <>
-      <span className="material-icons">shopping_cart</span>{totalQuant}
+    {totalQuant === 0 ? 
+      <></>
+     : (<><span className="material-icons">shopping_cart</span>{totalQuant}</>)}
+      
     </>
-    );
+    )
   
 };
 export default CartWidget;

@@ -17,15 +17,13 @@ const CartProvider = ({children}) => {
             let found = cartCopy.find((prod) => prod.id === product.id)
             console.log(found)
             found.quantity += quantity
-            setTotalQuant(totalQuant+quantity)
             setCart(cartCopy)
 
         } else {
             product.quantity = quantity
             setCart([...cart,product])
-            setTotalQuant(totalQuant+quantity)
         }
-
+        setTotalQuant(totalQuant+quantity)
     }
 
     const delFromCart = (id) => {
