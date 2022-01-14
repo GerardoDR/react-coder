@@ -8,11 +8,11 @@ const CartProvider = ({children}) => {
     const [totalQuant, setTotalQuant] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
 
+    const isInCart = (product) => cart.find((prod) => prod.id === product.id)
+
     const toCart = (product, quantity) => {
 
-        let alreadyInCart = cart.find((prod) => prod.id === product.id)
-
-        if(alreadyInCart){
+        if(isInCart(product)){
 
             let cartCopy = [...cart]
             let found = cartCopy.find((prod) => prod.id === product.id)
