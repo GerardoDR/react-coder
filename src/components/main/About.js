@@ -1,8 +1,8 @@
 function About() {
-    return (
-        <div className="mt">
-            <p>Empresa de venta de insumos de limpieza.</p>
-        </div>
-    )
+  return (
+    <div className="mt">
+      <p>Empresa de venta de insumos de limpieza.</p>
+    </div>
+  );
 }
-export default About
+export default About;
