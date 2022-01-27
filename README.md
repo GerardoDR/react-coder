@@ -1,7 +1,5 @@
 # Documentación del proyecto
 
---------------------------------------------------------------------------------------------  
-
 ## Descripción
 
 * La temática de este software es "tienda de artículos de limpieza". Se agregaron algunos productos básicos para dar pleno uso y demostrar todas las funcionalidades de la app.
@@ -12,20 +10,13 @@
     * react-toastify para las notificaciones en pantalla,
     * y los servicios de google firebase para alojar la data de los productos.
 
---------------------------------------------------------------------------------------------   
 
 ## Estructura de los componentes
 
 react-coder                            
 ├─ public                              
 │  ├─ assets                           
-│  │  ├─ balde.jpg                     
-│  │  ├─ escoba.jpg                    
-│  │  ├─ esponja.jpg                   
-│  │  ├─ jabon.jpg                     
-│  │  ├─ lavandina.jpg                 
-│  │  ├─ pageNotFound.jpg              
-│  │  └─ secador.jpg                   
+│  │  └─ *.jpg                   
 │  ├─ favicon.ico                      
 │  ├─ index.html                       
 │  ├─ manifest.json                    
@@ -66,22 +57,46 @@ react-coder
 ├─ package.json                        
 └─ README.md                           
 
---------------------------------------------------------------------------------------------  
 
 ## ¿Como utilizar este software?
 
 ### 1. Clonar el repositorio
 
-#### `git clone 'https://...'`
+#### `$ git clone https://github.com/GerardoDR/react-coder.git`
 
-### In the project directory, you can run:
+### 2. Ingresar al directorio del proyecto
 
-#### `npm start`
+#### `$ cd proyecto`
 
-Runs the app in the development mode.  
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 3. Dentro del directorio del proyecto, instalar las dependencias de nodeJs correspondientes:
 
-The page will reload if you make edits.  
-You will also see any lint errors in the console.
+#### `$ npm install`
 
+### 4. Dentro del mismo directorio, iniciar CreateReactApp con el siguiente comando:
+
+#### `$ npm start`
+
+Este comando inicia la app en el modo desarrollo.  
+Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
+
+La página se va a recargar automáticamente si se edita el código.  
+
+## Implementaciones y retoques pendientes
+
+### 1. Pasar collection(db, "productos") a firebase.js, como para importar directamente la colección.
+### 2. Reemplazar código repetido.
+### 3. Agregar form
+Para los usuarios al momento de finalizar compra, que tome los valores de los input. Ver de agregar la autenticación con firebase y/o formic.
+### 4. Stock, pero a lo sumo chequear stock al momento de agregar los items al carrito.
+No hace falta hacer nada con el stock, pero a lo sumo chequear stock al momento de agregar los items al carrito.
+### 5. Cart persistente
+Con localStorage
+### 6. Subir links de categorías a firebase
+### 7. Build
+`$ npm run build`
+
+generar el código final para subirlo a un web server.
+### 8. GIF o video dentro de este readme mostrando la funcionalidad del sitio. 
+(ver alejandromoises02/Marvel_guide_react_native en github)
+Agregar 1 producto, verlo en el carrito, ir al carrito y finalizar compra.
 --------------------------------------------------------------------------------------------  
