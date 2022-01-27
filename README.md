@@ -12,22 +12,22 @@
 
 ## Estructura de los componentes
 .
-├── public
-│   ├── assets
-│   │   └── ...
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
-├── src
-│   ├── components
-│   │   ├── header
-│   │   │   ├── CartWidget,js
-│   │   │   ├── Header.js
-│   │   │   └── Nav.js
-│   │   ├── main
-│   │   │   ├── itemDetail
-│   │   │   │   ├── ItemCount.js
+├── public\
+│   ├── assets\
+│   │   └── ...\
+│   ├── favicon.ico\
+│   ├── index.html\
+│   ├── manifest.json\
+│   └── robots.txt\
+├── src\
+│   ├── components\
+│   │   ├── header  
+│   │   │   ├── CartWidget,js  
+│   │   │   ├── Header.js  
+│   │   │   └── Nav.js  
+│   │   ├── main  
+│   │   │   ├── itemDetail  
+│   │   │   │   ├── ItemCount.js  
 │   │   │   │   ├── ItemDetail.js
 │   │   │   │   └── ItemDetailContainer.js
 │   │   │   ├── itemList
