@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import { db } from "../../../firebase.js";
-import { collection, getDoc, doc } from "firebase/firestore";
+import { col } from "../../../firebase.js";
+import { getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const getItem = () => {
-    const productsCollection = collection(db, "productos");
+    const productsCollection = col
     const refDoc = doc(productsCollection, id);
     getDoc(refDoc)
       .then((res) => {

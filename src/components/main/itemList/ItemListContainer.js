@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.js";
-import { db } from "../../../firebase.js";
-import { collection, query, getDocs, where } from "firebase/firestore";
+import { col } from "../../../firebase.js";
+import { query, getDocs, where } from "firebase/firestore";
 
 const ItemListContainer = ({ greeting }) => {
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ const ItemListContainer = ({ greeting }) => {
   const { category } = useParams();
 
   useEffect(() => {
-    const productsCollection = collection(db, "productos");
+    const productsCollection = col;
     if (!category) {
       getDocs(productsCollection)
         .then(({ docs }) => {

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider.js";
-import { db } from "../../firebase";
+import { col } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.min.css";
 import { toast } from "react-toastify";
@@ -10,7 +10,7 @@ const Cart = () => {
   const { cart, totalPrice, delFromCart, emptyCart } = useContext(CartContext);
 
   const commitSale = () => {
-    const salesCollection = collection(db, "ventas");
+    const salesCollection = col
     addDoc(salesCollection, {
       buyer: {
         name: "pirulo",

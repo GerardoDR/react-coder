@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/header/Header";
 import ItemDetailContainer from "./components/main/itemDetail/ItemDetailContainer";
 import ItemListContainer from "./components/main/itemList/ItemListContainer";
@@ -11,6 +11,7 @@ import CartProvider from "./context/CartProvider";
 import "./styles/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import SignIn from "./components/header/SignIn";
 
 const App = () => {
   const links = [
@@ -20,6 +21,11 @@ const App = () => {
     { href: "/contact", name: "contacto", id: 4 },
     { href: "/about", name: "sobre nosotros", id: 5 },
   ];
+
+  const [signIn, setSignIn] = useState(false)
+  const [signUp, setSignUp] = useState(false)
+
+  const PopUp = (signIn || signUp) ? "popup" : ""
 
   return (
     <CartProvider>
@@ -41,6 +47,7 @@ const App = () => {
             />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/signin" element={<SignIn signIn={signIn} setSignIn={setSignIn}/>} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<PageNotFound />} />
