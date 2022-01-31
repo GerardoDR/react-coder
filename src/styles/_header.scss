@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Caesar+Dressing&family=Poppins:wght@300&display=swap');
-.header{
+
+.header {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
     align-items: center;
     margin: 0 1em;
-    h1{
-        font-family:'Monoton', cursive;
+
+    h1 {
+        font-family: 'Monoton', cursive;
         font-size: 4rem;
         word-spacing: 1rem;
         letter-spacing: .5rem;
@@ -15,14 +17,32 @@
         text-transform: uppercase;
         text-shadow: 2px 2px 5px black;
     }
-    .nav{
-        // min-width: 50vw;
-        a{
+
+    .nav {
+        a {
             line-height: 24px;
             margin: 0 .5em;
             vertical-align: top;
         }
-       
 
+    }
+
+    .modals {
+        align-self: flex-end;
+    }
+
+    button {
+        background-color: $skobeloff;
+        border: none;
+        border-radius: .3em;
+        padding: .8em;
+        box-shadow: 0 0 5px $russian-violet;
+        margin: .5em ;
+        line-height: .2em;
+        vertical-align: middle;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

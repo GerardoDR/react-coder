@@ -2,10 +2,8 @@
 @import "header";
 @import "main";
 @import "footer";
+@import "modal";
 
 body{
     background-color: $prussian-blue;
-    .popup{
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    }
 }

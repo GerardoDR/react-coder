@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider.js";
 import { col } from "../../firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, serverTimestamp } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.min.css";
 import { toast } from "react-toastify";
 

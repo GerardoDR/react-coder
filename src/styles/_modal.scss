@@ -1,0 +1,23 @@
+.modal-bg {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.modal-card {
+    margin:  auto;
+    display: block;
+    margin-top: 25vh;
+    width: 40%;
+    background-color: $russian-violet-2;
+    border-radius: .3em;
+    &:hover{
+        cursor: default;
+    }
+}
