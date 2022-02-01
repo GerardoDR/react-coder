@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, EmailAuthProvider, signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
@@ -17,10 +17,20 @@ const db = getFirestore(app);
 
 const auth = getAuth(app);
 
-const provider = new GoogleAuthProvider()
+const providerG = new GoogleAuthProvider();
+const providerE = new EmailAuthProvider();
+
 
 export const signInWithGoogle = () => {
-  signInWithPopup(auth, provider).then((result) => console.log(result)).catch((error) => console.log(error))
+  signInWithPopup(auth, providerG).then((result) => console.log(result)).catch((error) => console.log(error))
+}
+
+export const signUpWithEmail = (mail, pwd) =>{
+  createUserWithEmailAndPassword(auth,mail,pwd).then((credentials) => console.log(credentials)).catch((error)=> console.log(error))
+}
+
+export const signInWithEmail = (mail, pwd) => {
+  signInWithPopup(auth,providerE).then((result)=> console.log(result)).catch((error)=> console.log(error))
 }
 
 export const col = collection(db, "productos");

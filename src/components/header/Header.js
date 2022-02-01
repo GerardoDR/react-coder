@@ -10,7 +10,6 @@ const Header = ({ title, links }) => {
   const handleSignInOpen = () => {
     setSignIn(true);
   };
-
   
   return (
     <header className="header">

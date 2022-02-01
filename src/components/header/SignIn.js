@@ -1,24 +1,29 @@
 import React from 'react';
-import { signInWithGoogle } from "../../firebase"
+import { signInWithGoogle, signInWithEmail } from "../../firebase"
 
 const SignIn = ({signIn, setSignIn}) => {
 
-  const handleModalClose = (e) => {
+  let email
+  let password
 
-    const currentClass = e.target.className;
+  const handleModalClose = (e) => {
     
-    if (currentClass === 'modal-card') {
+    if (e.target.className !== 'modal-bg') {
       return;
     } else {
       setSignIn(false);
     }
   };
 
+  const mail = (e) => email = e.target.value
+
+  const pwd = (e) => password = e.target.value
+
   return  (
     <div hidden={!signIn}>
       <div className="modal-bg" onClick={handleModalClose}>
         <div className="modal-card">
-          <button onClick={signInWithGoogle}>Usar Google</button>
+          <button onClick={signInWithGoogle}>Iniciá sesión con Google</button>
         </div>
       </div>
     </div>

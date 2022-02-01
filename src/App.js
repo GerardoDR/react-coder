@@ -12,7 +12,6 @@ import "./styles/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import ModalProvider from "./context/ModalProvider";
-import SignIn from "./components/header/SignIn";
 
 const App = () => {
   const links = [
@@ -28,7 +27,6 @@ const App = () => {
     <ModalProvider>
       <BrowserRouter>
         <Header title={"El Olimpio"} links={links} />
-        <SignIn/>
         <main>
           <Routes>
             <Route
