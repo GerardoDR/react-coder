@@ -1,4 +1,5 @@
 import React from 'react';
+import { signInWithGoogle } from "../../firebase"
 
 const SignIn = ({signIn, setSignIn}) => {
 
@@ -17,7 +18,7 @@ const SignIn = ({signIn, setSignIn}) => {
     <div hidden={!signIn}>
       <div className="modal-bg" onClick={handleModalClose}>
         <div className="modal-card">
-          Sign in
+          <button onClick={signInWithGoogle}>Usar Google</button>
         </div>
       </div>
     </div>
