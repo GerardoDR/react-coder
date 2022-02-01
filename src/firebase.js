@@ -17,10 +17,15 @@ const db = getFirestore(app);
 
 const auth = getAuth(app);
 
-const provider = new GoogleAuthProvider()
+const providerG = new GoogleAuthProvider();
 
 export const signInWithGoogle = () => {
-  signInWithPopup(auth, provider).then((result) => console.log(result)).catch((error) => console.log(error))
+  signInWithPopup(auth, providerG)
+    .then((result) => 
+      {console.log(result)
+        
+      })
+    .catch((error) => console.log(error))
 }
 
 export const col = collection(db, "productos");

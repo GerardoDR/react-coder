@@ -4,10 +4,8 @@ import { signInWithGoogle } from "../../firebase"
 const SignIn = ({signIn, setSignIn}) => {
 
   const handleModalClose = (e) => {
-
-    const currentClass = e.target.className;
     
-    if (currentClass === 'modal-card') {
+    if (e.target.className !== 'modal-bg') {
       return;
     } else {
       setSignIn(false);
@@ -18,7 +16,7 @@ const SignIn = ({signIn, setSignIn}) => {
     <div hidden={!signIn}>
       <div className="modal-bg" onClick={handleModalClose}>
         <div className="modal-card">
-          <button onClick={signInWithGoogle}>Usar Google</button>
+          <button onClick={signInWithGoogle}>Iniciá sesión con Google</button>
         </div>
       </div>
     </div>

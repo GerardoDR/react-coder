@@ -8,7 +8,7 @@ const ModalProvider = ({ children }) => {
 
     let modalVal={
         signIn,
-        setSignIn,
+        setSignIn
     }
 
     return (
