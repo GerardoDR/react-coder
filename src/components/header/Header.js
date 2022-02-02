@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 const Header = ({ title, links }) => {
 
   const [show, setShow] = useState(false);
-  const { signed, setSigned, user ,setUser } = useContext(CartContext);
+  const { signed, setSigned, user, setUser } = useContext(CartContext);
   const { auth } = googleAuth
   
   const handleSignInOpen = () => {

@@ -1,28 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList.js";
 import { col } from "../../../firebase.js";
 import { query, getDocs, where } from "firebase/firestore";
-import { CartContext } from "../../../context/CartProvider";
 
 const ItemListContainer = ({ greeting }) => {
-
-  const { cart, setTotalQuant, setTotalPrice, sLScart } = useContext(CartContext);
 
   const [loading, setLoading] = useState(true);
 
   const [list, setList] = useState([]);
 
   const { category } = useParams();
-
-  if(localStorage.getItem('cart')){
-    sLScart(JSON.parse(localStorage.getItem('cart')))
-    setTotalQuant(cart.reduce((acc, elem) =>acc+ elem.quantity,0))
-    setTotalPrice(cart.reduce((acc, elem) => acc + elem.price*elem.quantity,0))
-
-  } else {
-    sLScart([])
-  }
 
   const getProducts = (query) => {
     getDocs(query)

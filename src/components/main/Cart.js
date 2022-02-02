@@ -73,7 +73,7 @@ const Cart = () => {
           );
         })}
         <h3>Total: ${totalPrice}</h3>
-        <button onClick={commitSale} disabled={!user}>Finalizar compra</button>
+        <button onClick={commitSale}>Finalizar compra</button>
         <button onClick={emptyCart}>Vaciar Carrito</button>
       </div>
     );

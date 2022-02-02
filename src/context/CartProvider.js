@@ -4,19 +4,20 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   
-  const [cart, setCart] = useState(initialCart);
+  const [cart, setCart] = useState([]);
   const [totalQuant, setTotalQuant] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [signed, setSigned] = useState(false);
   const [user, setUser] = useState({})
 
+  let localCart = localStorage.getItem("cart")
+
   useEffect(()=>{
-    if(localStorage.getItem('cart')){
-      const initialCart = JSON.parse(localStorage.getItem('cart'))
-      setTotalQuant(cart.reduce((acc, elem) =>acc + elem.quantity,0))
-      setTotalPrice(cart.reduce((acc, elem) => acc + elem.price*elem.quantity,0))
-    } else{
-      const initialCart = []
+    localCart = JSON.parse(localCart)
+    if(localCart){
+      setCart(localCart)
+      setTotalQuant(localCart.reduce((acc, elem) =>acc + elem.quantity,0))
+      setTotalPrice(localCart.reduce((acc, elem) => acc + elem.price*elem.quantity,0))
     }
   },[])
   
