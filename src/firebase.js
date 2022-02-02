@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
@@ -15,17 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const auth = getAuth(app);
-
-const providerG = new GoogleAuthProvider();
-
-export const signInWithGoogle = () => {
-  signInWithPopup(auth, providerG)
-    .then((result) => 
-      {console.log(result)
-        
-      })
-    .catch((error) => console.log(error))
-}
-
+export const googleAuth = {auth: getAuth(app),providerG: new GoogleAuthProvider()}
+  
 export const col = collection(db, "productos");
+
+export const colSales = collection(db, "ventas");

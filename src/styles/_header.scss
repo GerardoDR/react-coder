@@ -45,4 +45,21 @@
             cursor: pointer;
         }
     }
+    .userProfile{
+        #userPhoto{
+            height: 100%;
+            width: 3vw;
+            border-radius: 30px;
+        }
+        display:flex;
+        border-radius: .5em;
+        flex-direction: column;
+        padding: .5em;
+        margin: .5em;
+        align-items: center;
+        font-size: 11px;
+        background-color: $charcoal;
+        border: 1px solid $midnight-green-eagle-green-3;
+    }
+    
 }

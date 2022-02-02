@@ -11,7 +11,8 @@ import CartProvider from "./context/CartProvider";
 import "./styles/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import ModalProvider from "./context/ModalProvider";
+
+ 
 
 const App = () => {
   const links = [
@@ -24,7 +25,6 @@ const App = () => {
 
   return (
     <CartProvider>
-    <ModalProvider>
       <BrowserRouter>
         <Header title={"El Olimpio"} links={links} />
         <main>
@@ -51,7 +51,6 @@ const App = () => {
         </main>
         <Footer />
       </BrowserRouter>
-    </ModalProvider>
     </CartProvider>
   );
 };

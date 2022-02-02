@@ -1,21 +1,23 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider.js";
-import { col } from "../../firebase";
+import { colSales } from "../../firebase";
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.min.css";
 import { toast } from "react-toastify";
 
 const Cart = () => {
-  const { cart, totalPrice, delFromCart, emptyCart } = useContext(CartContext);
+  const { cart, totalPrice, delFromCart, emptyCart, user, signed } = useContext(CartContext);
 
   const commitSale = () => {
-    const salesCollection = col
+    const salesCollection = colSales
+    
+    if(signed){
     addDoc(salesCollection, {
-      buyer: {
-        name: "pirulo",
-        phone: 1122223333,
-        mail: "pirulo@mail.com",
+      buyer:{
+        name:user.name,
+        phone:user.phone,
+        email:user.email
       },
       items: cart.map((prod) => {
         return {
@@ -41,6 +43,14 @@ const Cart = () => {
         emptyCart();
       })
       .catch((err) => console.log(err));
+    } else {
+      toast.warn("Debe Iniciar sesión antes de finalizar su compra.", {
+        theme: "dark",
+        position: "top-right",
+        autoClose: 2000,
+        className: "toastAdd",
+      });
+    }
   };
 
   if (cart.length > 0) {
@@ -63,7 +73,7 @@ const Cart = () => {
           );
         })}
         <h3>Total: ${totalPrice}</h3>
-        <button onClick={commitSale}>Finalizar compra</button>{" "}
+        <button onClick={commitSale} disabled={!user}>Finalizar compra</button>
         <button onClick={emptyCart}>Vaciar Carrito</button>
       </div>
     );
