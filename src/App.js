@@ -14,18 +14,11 @@ import { ToastContainer } from "react-toastify";
 
 
 const App = () => {
-  const links = [
-    { href: "/home", name: "home", id: 1 },
-    { href: "/category/outlet", name: "outlet", id: 2 },
-    { href: "/category/sale", name: "ofertas", id: 3 },
-    { href: "/contact", name: "contacto", id: 4 },
-    { href: "/about", name: "sobre nosotros", id: 5 },
-  ];
 
   return (
     <CartProvider>
       <BrowserRouter>
-        <Header links={links} />
+        <Header />
         <main>
           <Routes>
             <Route

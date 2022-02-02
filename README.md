@@ -83,21 +83,13 @@ La página se va a recargar automáticamente si se edita el código.
 
 ## Implementaciones y retoques pendientes
 
- ### 1. Pasar collection(db, "productos") a firebase.js, como para importar directamente la colección. y los links de categories a una collection.
-### 2. Agregar form
-Para los usuarios al momento de finalizar compra, que tome los valores de los input. Ver de agregar la autenticación con firebase y/o formic.
-
-### 3. Cart persistente
-### 4. Stock, pero a lo sumo chequear stock al momento de agregar los items al carrito.
-No hace falta hacer nada con el stock, pero a lo sumo chequear stock al momento de agregar los items al carrito.
-### 5. Reemplazar código repetido.
-Con localStorage
-### 6. Subir links de categorías a firebase
-### 7. Build
+### 1. Build
 `$ npm run build`
 
 generar el código final para subirlo a un web server.
-### 8. GIF o video dentro de este readme mostrando la funcionalidad del sitio. 
+### 2. GIF o video dentro de este readme mostrando la funcionalidad del sitio. 
 (ver alejandromoises02/Marvel_guide_react_native en github)
 Agregar 1 producto, verlo en el carrito, ir al carrito y finalizar compra.
+
+### 3. corregir arbol de componentes
 --------------------------------------------------------------------------------------------  
