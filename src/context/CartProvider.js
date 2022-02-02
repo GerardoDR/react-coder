@@ -10,9 +10,9 @@ const CartProvider = ({ children }) => {
   const [signed, setSigned] = useState(false);
   const [user, setUser] = useState({})
 
-  let localCart = localStorage.getItem("cart")
-
+  
   useEffect(()=>{
+    let localCart = localStorage.getItem("cart")
     localCart = JSON.parse(localCart)
     if(localCart){
       setCart(localCart)

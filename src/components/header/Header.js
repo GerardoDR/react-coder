@@ -1,20 +1,48 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Nav from "./Nav";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider.js";
 import { signOut } from "firebase/auth";
-import { googleAuth } from "../../firebase";
+import { getDocs } from "firebase/firestore";
+import { googleAuth, categories } from "../../firebase";
 import SignIn from "./SignIn";
 import "react-toastify/dist/ReactToastify.min.css";
 import { toast } from "react-toastify";
 
 
-const Header = ({ title, links }) => {
+const Header = () => {
 
   const [show, setShow] = useState(false);
   const { signed, setSigned, user, setUser } = useContext(CartContext);
   const { auth } = googleAuth
-  
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    getDocs(categories)
+      .then(({ docs }) => {
+
+        const mapedCategories = docs.map((doc) => {
+          const data = doc.data();
+          const id = doc.id
+          const categoryToLink = {
+            id: id,
+            ...data,
+          };
+          return categoryToLink
+        })
+
+        const linksWCategories = ([
+          { href: "/home", name: "home", id: 1 },
+          ...mapedCategories,
+          { href: "/contact", name: "contacto", id: 2 },
+          { href: "/about", name: "sobre nosotros", id: 3 },
+        ])
+
+        setLinks(linksWCategories)
+        
+      })
+  }, [])
+
   const handleSignInOpen = () => {
     setShow(true);
   };
@@ -37,24 +65,24 @@ const Header = ({ title, links }) => {
   return (
     <header className="header">
       <NavLink to="/">
-        <h1>{title}</h1>
+        <h1>El Olimpio</h1>
       </NavLink>
       <Nav links={links} />
       <div className="modals">
-        {signed?
-        (<>
-        <div className="userProfile">
-          <img src={user.photo} id="userPhoto" alt="profile"/>
-          <h4>{user.name}</h4>
-          <p>{user.email}</p>
-        </div>
-        <button onClick={handleSignOut}>Cerrar Sesión</button>
-        </>
-        )
-        
-        :(<button onClick={handleSignInOpen}>
-          <span className="material-icons">account_circle</span>
-        </button>)}
+        {signed ?
+          (<>
+            <div className="userProfile">
+              <img src={user.photo} id="userPhoto" alt="profile" />
+              <h4>{user.name}</h4>
+              <p>{user.email}</p>
+            </div>
+            <button onClick={handleSignOut}>Cerrar Sesión</button>
+          </>
+          )
+
+          : (<button onClick={handleSignInOpen}>
+            <span className="material-icons">account_circle</span>
+          </button>)}
       </div>
       <SignIn show={show} setShow={setShow} />
     </header>

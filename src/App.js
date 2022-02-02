@@ -12,7 +12,6 @@ import "./styles/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
- 
 
 const App = () => {
   const links = [
@@ -26,7 +25,7 @@ const App = () => {
   return (
     <CartProvider>
       <BrowserRouter>
-        <Header title={"El Olimpio"} links={links} />
+        <Header links={links} />
         <main>
           <Routes>
             <Route

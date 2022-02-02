@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Nav = ({ links }) => {
   return (
     <nav className="nav">
-      {links.map((el, i) => {
+      {links.map((el) => {
         return (
           <NavLink key={`link${el.id}`} to={el.href}>
             {el.name}

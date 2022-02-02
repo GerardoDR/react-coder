@@ -15,8 +15,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export const googleAuth = {auth: getAuth(app),providerG: new GoogleAuthProvider()}
+export const googleAuth = {auth: getAuth(app),providerG: new GoogleAuthProvider()};
   
 export const col = collection(db, "productos");
 
 export const colSales = collection(db, "ventas");
+
+export const categories = collection(db, "categories");
