@@ -6,10 +6,7 @@ const ItemCount = ({ stock, initial, onAdd, addFail }) => {
 
   const sum = () => setContador(contador + 1);
 
-  const rest = () =>
-    contador > 1
-      ? setContador(contador - 1)
-      : console.log("el contador no puede adquirir valor menor a 1");
+  const rest = () =>{if(contador > 1){setContador(contador - 1)}}    
 
   const agregar = () => {
     if (contador <= stock) {

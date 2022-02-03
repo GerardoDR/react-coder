@@ -2,21 +2,28 @@
 
 ## Descripción
 
-* La temática de este software es "tienda de artículos de limpieza". Se agregaron algunos productos básicos para dar pleno uso y demostrar todas las funcionalidades de la app.
+* La temática de este software es "tienda de artículos de limpieza". Continene algunos productos básicos para dar pleno uso y demostrar todas las funcionalidades de la app.
 
 * Para este e-commerce, realizado como entrega final para el curso de ReactJS de CoderHouse utilicé:
     * CreateReactApp para su compilación,
-    * react-sass para los estilos,
-    * react-toastify para las notificaciones en pantalla,
-    * y los servicios de google firebase para alojar la data de los productos.
+    * react-sass para el pre-proceso de estilos,
+    * react-toastify para los pop ups/notificaciones,
+    * Firebase Firestore para alojar la data de los productos.
+    * Firebase Auth para la autenticación con google.
+---
 
+## Demostración
+
+![Demonstration web](./public/assets/demo/elolimpioDemo.gif)
+
+---
 
 ## Estructura de los componentes
 
 react-coder                            
 ├─ public                              
-│  ├─ assets                           
-│  │  └─ *.jpg                   
+│  ├─ assets                                      
+│  │  └─ ...                  
 │  ├─ favicon.ico                      
 │  ├─ index.html                       
 │  ├─ manifest.json                    
@@ -28,7 +35,8 @@ react-coder
 │  │  ├─ header                        
 │  │  │  ├─ CartWidget.js              
 │  │  │  ├─ Header.js                  
-│  │  │  └─ Nav.js                     
+│  │  │  ├─ Nav.js                     
+│  │  │  └─ SignIn.js                  
 │  │  └─ main                          
 │  │     ├─ itemDetail                 
 │  │     │  ├─ ItemCount.js            
@@ -48,7 +56,8 @@ react-coder
 │  │  ├─ _base.scss                    
 │  │  ├─ _footer.scss                  
 │  │  ├─ _header.scss                  
-│  │  └─ _main.scss                    
+│  │  ├─ _main.scss                    
+│  │  └─ _modal.scss                   
 │  ├─ App.js                           
 │  ├─ firebase.js                      
 │  ├─ index.js                         
@@ -57,6 +66,7 @@ react-coder
 ├─ package.json                        
 └─ README.md                           
 
+---
 
 ## ¿Como utilizar este software?
 
@@ -66,13 +76,13 @@ react-coder
 
 ### 2. Ingresar al directorio del proyecto
 
-#### `$ cd proyecto`
+#### `$ cd [ruta del proyecto]`
 
 ### 3. Dentro del directorio del proyecto, instalar las dependencias de nodeJs correspondientes:
 
-#### `$ npm install`
+#### `$ npm i`
 
-### 4. Dentro del mismo directorio, iniciar CreateReactApp con el siguiente comando:
+### 4. Dentro del mismo directorio y finalizada la instalación de dependencias, iniciar CreateReactApp con el siguiente comando:
 
 #### `$ npm start`
 
@@ -81,15 +91,19 @@ Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
 La página se va a recargar automáticamente si se edita el código.  
 
-## Implementaciones y retoques pendientes
+---
 
-### 1. Build
-`$ npm run build`
+## Implementaciones pendientes
 
-generar el código final para subirlo a un web server.
-### 2. GIF o video dentro de este readme mostrando la funcionalidad del sitio. 
-(ver alejandromoises02/Marvel_guide_react_native en github)
-Agregar 1 producto, verlo en el carrito, ir al carrito y finalizar compra.
-
-### 3. corregir arbol de componentes
---------------------------------------------------------------------------------------------  
+* Sumar más métodos de autenticación.
+* Mejorar estilos y animaciónes (spinner, transitions)
+* Sweet alert o algún otro mecanismo para permitir que el usuario guarde su código de seguimiento (este queda guardado en session storage)
+* Introducir cambios de precio y porcentajes de descuento de acuerdo a categorías y a cada producto en particular.
+* Proveer la opción de mantener la sesión del usuario iniciada de manera persistente.
+* Control de stock.
+* Consumo de API de pagos.
+* GIF o video dentro de este readme mostrando la funcionalidad del sitio. 
+    * Agregar 1 producto, verlo en el widget, ir al carrito, borrar el producto, agregar otros 2 productos, cerrar ventana, volver a abrirla, hacer login y finalizar compra.
+* Build
+    * `$ npm run build` : generar el código final y subirlo a un web server.
+---

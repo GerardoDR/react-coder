@@ -23,15 +23,15 @@ const App = () => {
           <Routes>
             <Route
               path="/"
-              element={<ItemListContainer greeting={"ACA VA EL HERO"} />}
+              element={<ItemListContainer/>}
               />
             <Route
               path="/home"
-              element={<ItemListContainer greeting={"ACA VA EL HERO"} />}
+              element={<ItemListContainer/>}
               />
             <Route
               path="/category/:category"
-              element={<ItemListContainer greeting={"ACA VA EL HERO"} />}
+              element={<ItemListContainer/>}
               />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />

@@ -5,22 +5,11 @@ main {
         text-align: center;
         
         button {
-            background-color: $skobeloff;
-            border: none;
-            border-radius: .3em;
-            padding: .8em;
-            box-shadow: 0 0 5px $russian-violet;
             margin: 1em 0 1em 0 ;
-            line-height: .2em;
-            vertical-align: middle;
-
-            &:hover {
-                cursor: pointer;
-            }
         }
     }
 
-    min-height: 50vh;
+    min-height: 38vh;
 
     .itemListContainer {
         font-size: 1.5rem;
@@ -59,19 +48,8 @@ main {
                     border: solid 2px $russian-violet-2;
                 }
 
-                button {
-                    background-color: $skobeloff;
-                    border: none;
-                    border-radius: .3em;
-                    padding: .8em;
-                    box-shadow: 0 0 5px $russian-violet;
+                button { 
                     margin: .5em 0 1.5em 0 ;
-                    line-height: .2em;
-                    vertical-align: middle;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
                 }
             }
         }
@@ -111,21 +89,6 @@ main {
             flex-direction: column;
             align-items: center;
             grid-area: 2 / 3 / 4 / 4;
-        }
-
-        button {
-            background-color: $skobeloff;
-            border: none;
-            border-radius: .3em;
-            padding: .8em;
-            box-shadow: 0 0 5px $russian-violet;
-            margin: .5em;
-            line-height: .2em;
-            vertical-align: middle;
-
-            &:hover {
-                cursor: pointer;
-            }
         }
     }
     

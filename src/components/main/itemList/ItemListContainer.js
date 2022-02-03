@@ -4,7 +4,7 @@ import ItemList from "./ItemList.js";
 import { col } from "../../../firebase.js";
 import { query, getDocs, where } from "firebase/firestore";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
   const [loading, setLoading] = useState(true);
 
@@ -51,7 +51,6 @@ const ItemListContainer = ({ greeting }) => {
   } else {
     return (
       <div className="itemListContainer">
-        <p>{greeting}</p>
         <ItemList list={list} />
       </div>
     );

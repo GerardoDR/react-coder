@@ -30,24 +30,24 @@ const Cart = () => {
       total: totalPrice,
     })
       .then((res) => {
-        console.log(res.id);
         toast.success(
           `Tu compra ya está en camino!\nÉste es su código de seguimiento: ${res.id}`,
           {
             theme: "dark",
             position: "top-right",
-            autoClose: 2000,
+            autoClose: 5000,
             className: "toastAdd",
           }
         );
+        sessionStorage.setItem('lastCartID',`${res.id}`)
         emptyCart();
       })
       .catch((err) => console.log(err));
     } else {
-      toast.warn("Debe Iniciar sesión antes de finalizar su compra.", {
+      toast.warn("Debés iniciar sesión antes de finalizar tu compra.", {
         theme: "dark",
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 3000,
         className: "toastAdd",
       });
     }

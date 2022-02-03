@@ -31,6 +31,12 @@ const SignIn = ({ show, setShow }) => {
     }
   };
 
+  if(show){
+    document.body.style.overflowY="hidden"
+  } else {
+    document.body.style.overflowY=""
+  }
+
   return (
     <div hidden={!show}>
       <div className="modal-bg" onClick={handleModalClose}>

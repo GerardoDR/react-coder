@@ -8,7 +8,7 @@ import { CartContext } from "../../../context/CartProvider";
 const ItemDetail = ({ prod }) => {
   const [buy, setBuy] = useState(false);
 
-  const { toCart } = useContext(CartContext);
+  const { toCart, cart } = useContext(CartContext);
 
   const onAdd = (count) => {
     toast.success(`items agregados: ${count} ${prod.name}`, {
@@ -43,7 +43,7 @@ const ItemDetail = ({ prod }) => {
           <button>Terminar compra</button>
         </Link>
       ) : (
-        <ItemCount stock={10} initial={1} onAdd={onAdd} addFail={addFail} />
+        <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} addFail={addFail} />
       )}
     </div>
   );

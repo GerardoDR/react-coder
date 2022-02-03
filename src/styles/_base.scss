@@ -12,15 +12,29 @@ $russian-violet-2: #4d194dff;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     color: #fff;
-        a{
-            text-decoration: none;
-        }
+
+    a {
+        text-decoration: none;
+    }
 }
 
+button {
+    background-color: $skobeloff;
+    border: none;
+    border-radius: .3em;
+    padding: .8em;
+    box-shadow: 0 0 5px $russian-violet;
+    margin: .5em;
+    line-height: .2em;
+    vertical-align: middle;
 
+    &:hover {
+        cursor: pointer;
+    }
+}

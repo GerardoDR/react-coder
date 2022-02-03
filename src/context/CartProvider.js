@@ -28,6 +28,7 @@ const CartProvider = ({ children }) => {
   const isInCart = (product) => cart.find((prod) => prod.id === product.id);
 
   const toCart = (product, quantity) => {
+    
     if (isInCart(product)) {
       let cartCopy = [...cart];
       let found = cartCopy.find((prod) => prod.id === product.id);

@@ -37,14 +37,13 @@ const Header = () => {
           { href: "/contact", name: "contacto", id: 2 },
           { href: "/about", name: "sobre nosotros", id: 3 },
         ])
-
         setLinks(linksWCategories)
-        
       })
   }, [])
 
   const handleSignInOpen = () => {
     setShow(true);
+    // document.body.style.overflowY="hidden"
   };
 
   const handleSignOut = () => {
@@ -65,10 +64,13 @@ const Header = () => {
   return (
     <header className="header">
       <NavLink to="/">
-        <h1>El Olimpio</h1>
+        <div className="headerTitle">
+          <h1>El Olimpio</h1>
+          <h2>El favor de los Dioses en la limpieza de tu casa</h2>
+        </div>
       </NavLink>
-      <Nav links={links} />
       <div className="modals">
+      <Nav links={links} />
         {signed ?
           (<>
             <div className="userProfile">
@@ -79,10 +81,11 @@ const Header = () => {
             <button onClick={handleSignOut}>Cerrar Sesión</button>
           </>
           )
-
-          : (<button onClick={handleSignInOpen}>
-            <span className="material-icons">account_circle</span>
-          </button>)}
+          : (
+            <button onClick={handleSignInOpen}>
+              <span className="material-icons">account_circle</span>
+            </button>
+          )}
       </div>
       <SignIn show={show} setShow={setShow} />
     </header>
