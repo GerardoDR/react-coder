@@ -14,7 +14,7 @@
 
 ## Demostración
 
-![Demonstration web](./public/assets/demo/elolimpioDemo.gif)
+![Demonstration web](/public/assets/demo/ELOLIMPIO.gif)
 
 ---
 
