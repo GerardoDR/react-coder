@@ -11,7 +11,7 @@ const ItemDetail = ({ prod }) => {
   const { toCart } = useContext(CartContext);
 
   const onAdd = (count) => {
-    toast.success(`items agregados: ${count} ${prod.name}`, {
+    toast.success(`items agregados: \n ${prod.name} ${count}u.`, {
       theme: "dark",
       position: "top-right",
       autoClose: 2000,
