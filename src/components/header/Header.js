@@ -69,8 +69,8 @@ const Header = () => {
           <h2>El favor de los Dioses en la limpieza de tu casa</h2>
         </div>
       </NavLink>
-      <div className="modals">
       <Nav links={links} />
+      <div className="modals">
         {signed ?
           (<>
             <div className="userProfile">

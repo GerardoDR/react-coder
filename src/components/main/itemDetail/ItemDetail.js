@@ -8,7 +8,7 @@ import { CartContext } from "../../../context/CartProvider";
 const ItemDetail = ({ prod }) => {
   const [buy, setBuy] = useState(false);
 
-  const { toCart, cart } = useContext(CartContext);
+  const { toCart } = useContext(CartContext);
 
   const onAdd = (count) => {
     toast.success(`items agregados: ${count} ${prod.name}`, {
