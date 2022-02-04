@@ -102,8 +102,6 @@ La página se va a recargar automáticamente si se edita el código.
 * Proveer la opción de mantener la sesión del usuario iniciada de manera persistente.
 * Control de stock.
 * Consumo de API de pagos.
-* GIF o video dentro de este readme mostrando la funcionalidad del sitio. 
-    * Agregar 1 producto, verlo en el widget, ir al carrito, borrar el producto, agregar otros 2 productos, cerrar ventana, volver a abrirla, hacer login y finalizar compra.
 * Build
     * `$ npm run build` : generar el código final y subirlo a un web server.
 ---
