@@ -16,7 +16,7 @@
 
 ![Demonstration web](/public/assets/demo/ELOLIMPIO.gif)
 
----
+
 
 ## Estructura de los componentes
 
@@ -66,7 +66,7 @@ react-coder
 ├─ package.json                        
 └─ README.md                           
 
----
+
 
 ## ¿Como utilizar este software?
 
@@ -91,7 +91,7 @@ Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
 La página se va a recargar automáticamente si se edita el código.  
 
----
+
 
 ## Implementaciones pendientes
 
