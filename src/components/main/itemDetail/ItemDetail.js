@@ -43,7 +43,12 @@ const ItemDetail = ({ prod }) => {
           <button>Terminar compra</button>
         </Link>
       ) : (
-        <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} addFail={addFail} />
+        <ItemCount
+          stock={prod.stock}
+          initial={1}
+          onAdd={onAdd}
+          addFail={addFail}
+        />
       )}
     </div>
   );

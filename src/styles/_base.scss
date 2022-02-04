@@ -1,4 +1,3 @@
-/* SCSS HEX */
 $skobeloff: #006466ff;
 $midnight-green-eagle-green: #065a60ff;
 $midnight-green-eagle-green-2: #0b525bff;
@@ -13,28 +12,28 @@ $russian-violet-2: #4d194dff;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 button {
-    background-color: $skobeloff;
-    border: none;
-    border-radius: .3em;
-    padding: .8em;
-    box-shadow: 0 0 5px $russian-violet;
-    margin: .5em;
-    line-height: .2em;
-    vertical-align: middle;
+  background-color: $skobeloff;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.8em;
+  box-shadow: 0 0 5px $russian-violet;
+  margin: 0.5em;
+  line-height: 0.2em;
+  vertical-align: middle;
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }

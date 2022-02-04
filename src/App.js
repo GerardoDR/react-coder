@@ -12,27 +12,16 @@ import "./styles/App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-
 const App = () => {
-
   return (
     <CartProvider>
       <BrowserRouter>
         <Header />
         <main>
           <Routes>
-            <Route
-              path="/"
-              element={<ItemListContainer/>}
-              />
-            <Route
-              path="/home"
-              element={<ItemListContainer/>}
-              />
-            <Route
-              path="/category/:category"
-              element={<ItemListContainer/>}
-              />
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/home" element={<ItemListContainer />} />
+            <Route path="/category/:category" element={<ItemListContainer />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />

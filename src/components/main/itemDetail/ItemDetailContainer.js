@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const getItem = () => {
-    const productsCollection = col
+    const productsCollection = col;
     const refDoc = doc(productsCollection, id);
     getDoc(refDoc)
       .then((res) => {

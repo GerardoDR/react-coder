@@ -7,42 +7,43 @@ import "react-toastify/dist/ReactToastify.min.css";
 import { toast } from "react-toastify";
 
 const Cart = () => {
-  const { cart, totalPrice, delFromCart, emptyCart, user, signed } = useContext(CartContext);
+  const { cart, totalPrice, delFromCart, emptyCart, user, signed } =
+    useContext(CartContext);
 
   const commitSale = () => {
-    const salesCollection = colSales
-    
-    if(signed){
-    addDoc(salesCollection, {
-      buyer:{
-        name:user.name,
-        phone:user.phone,
-        email:user.email
-      },
-      items: cart.map((prod) => {
-        return {
-          name: prod.name,
-          price: prod.price,
-          quantity: prod.quantity,
-        };
-      }),
-      date: serverTimestamp(),
-      total: totalPrice,
-    })
-      .then((res) => {
-        toast.success(
-          `Tu compra ya está en camino!\nÉste es su código de seguimiento: ${res.id}`,
-          {
-            theme: "dark",
-            position: "top-right",
-            autoClose: 5000,
-            className: "toastAdd",
-          }
-        );
-        sessionStorage.setItem('lastCartID',`${res.id}`)
-        emptyCart();
+    const salesCollection = colSales;
+
+    if (signed) {
+      addDoc(salesCollection, {
+        buyer: {
+          name: user.name,
+          phone: user.phone,
+          email: user.email,
+        },
+        items: cart.map((prod) => {
+          return {
+            name: prod.name,
+            price: prod.price,
+            quantity: prod.quantity,
+          };
+        }),
+        date: serverTimestamp(),
+        total: totalPrice,
       })
-      .catch((err) => console.log(err));
+        .then((res) => {
+          toast.success(
+            `Tu compra ya está en camino!\nÉste es su código de seguimiento: ${res.id}`,
+            {
+              theme: "dark",
+              position: "top-right",
+              autoClose: 5000,
+              className: "toastAdd",
+            }
+          );
+          sessionStorage.setItem("lastCartID", `${res.id}`);
+          emptyCart();
+        })
+        .catch((err) => console.log(err));
     } else {
       toast.warn("Debés iniciar sesión antes de finalizar tu compra.", {
         theme: "dark",

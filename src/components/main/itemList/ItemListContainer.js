@@ -5,7 +5,6 @@ import { col } from "../../../firebase.js";
 import { query, getDocs, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
-
   const [loading, setLoading] = useState(true);
 
   const [list, setList] = useState([]);

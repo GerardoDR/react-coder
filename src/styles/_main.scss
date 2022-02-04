@@ -1,123 +1,122 @@
 main {
-    .mt {
-        margin-top: 10vh;
-        margin-left: 1em;
-        text-align: center;
-        
-        button {
-            margin: 1em 0 1em 0 ;
-        }
+  .mt {
+    margin-top: 10vh;
+    margin-left: 1em;
+    text-align: center;
+
+    button {
+      margin: 1em 0 1em 0;
     }
+  }
 
-    min-height: 38vh;
+  min-height: 38vh;
 
-    .itemListContainer {
-        font-size: 1.5rem;
-        font-weight: bold;
-        border-radius: 1em;
-        box-shadow: 0 0 3px black;
-        text-align: center;
-        padding: 1rem;
-        margin: 1rem;
-        background-color: $space-cadet;
-        text-transform: capitalize;
+  .itemListContainer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1em;
+    box-shadow: 0 0 3px black;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $space-cadet;
+    text-transform: capitalize;
 
-        .listaProds {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            border-radius: .5em;
+    .listaProds {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 0.5em;
 
-            .item {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                border-radius: .5em;
-                background-color: $dark-purple;
-                margin: 10px;
-                box-shadow: 0 0 3px black;
-                h3{
-                    margin-top: .5em;
-                }
-
-                .itemImg {
-                    width: 180px;
-                    max-height: 210px;
-                    border-radius: .5em;
-                    margin: .5em;
-                    border: solid 2px $russian-violet-2;
-                }
-
-                button { 
-                    margin: .5em 0 1.5em 0 ;
-                }
-            }
-        }
-    }
-
-    .toastAdd {
-        font-size: 1rem;
+      .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 0.5em;
         background-color: $dark-purple;
+        margin: 10px;
+        box-shadow: 0 0 3px black;
+        h3 {
+          margin-top: 0.5em;
+        }
+
+        .itemImg {
+          width: 180px;
+          max-height: 210px;
+          border-radius: 0.5em;
+          margin: 0.5em;
+          border: solid 2px $russian-violet-2;
+        }
+
+        button {
+          margin: 0.5em 0 1.5em 0;
+        }
+      }
+    }
+  }
+
+  .toastAdd {
+    font-size: 1rem;
+    background-color: $dark-purple;
+  }
+
+  .itemDetailContainer {
+    text-transform: capitalize;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+    margin-top: 2em;
+
+    img {
+      border-radius: 0.5em;
+      margin: 0.5em;
+      border: solid 2px $russian-violet-2;
+      grid-area: 1 / 1 / 4 / 3;
+      max-width: 400px;
+      max-height: 400px;
     }
 
-    .itemDetailContainer {
-
-        text-transform: capitalize;
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: repeat(3, auto);
-        justify-items: center;
-        align-items: center;
-        margin-top: 2em;
-
-        img {
-            border-radius: .5em;
-            margin: .5em;
-            border: solid 2px $russian-violet-2;
-            grid-area: 1 / 1 / 4 / 3;
-            max-width: 400px;
-            max-height: 400px;
-        }
-
-        .details {
-            grid-area: 1 / 3 / 2 / 4;
-        }
-
-        .contador {
-            font-size: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            grid-area: 2 / 3 / 4 / 4;
-        }
+    .details {
+      grid-area: 1 / 3 / 2 / 4;
     }
-    
-    #notFound{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        img{
-            margin-bottom: 2em;
-            box-shadow: 0 0 2em black;
-            width: 350px;
-            border-radius: .5em;
-            border: 2px dotted $skobeloff;
-        }
+
+    .contador {
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-area: 2 / 3 / 4 / 4;
     }
-    .cartBody{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        .cartItem{
-            text-transform: capitalize;
-            align-items: center;
-            display: flex;
-            width: 100%;
-            justify-content: space-evenly;
-        }
-        h3{
-            margin: 1em;
-        }
+  }
+
+  #notFound {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    img {
+      margin-bottom: 2em;
+      box-shadow: 0 0 2em black;
+      width: 350px;
+      border-radius: 0.5em;
+      border: 2px dotted $skobeloff;
     }
+  }
+  .cartBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cartItem {
+      text-transform: capitalize;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    h3 {
+      margin: 1em;
+    }
+  }
 }
